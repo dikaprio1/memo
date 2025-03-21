@@ -3,13 +3,21 @@ package com.example.entity;
 import com.example.dto.MemoRequestDto;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.Setter;
 
 @Getter
 @AllArgsConstructor
 public class Memo {
+
+    @Setter
     private Long id;
     private String title;
     private String contents;
+
+    public Memo(String title,String contents){
+        this.title =title;
+        this.contents =contents;
+    }
 
     public void update(MemoRequestDto RequestDto){
         this.title=RequestDto.getTitle();
